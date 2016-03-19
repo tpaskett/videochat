@@ -1,0 +1,127 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Video Chat</title>
+        <link rel="stylesheet" type="text/css" href="/easyrtc/easyrtc.css" />
+        <link rel="stylesheet" href="bootstrap.min.css"/>
+        <link rel="stylesheet" href="bootstrap-theme.min.css"/>
+        <link rel="stylesheet" href="style.css"/>
+        <script src="/socket.io/socket.io.js">
+        </script>
+        <script type="text/javascript" src="ohsnap.js">
+        </script>
+        <script type="text/javascript" src="/easyrtc/easyrtc.js">
+        </script>
+        <script type="text/javascript" src="jquery-2.2.0.min.js">
+        </script>
+        <script type="text/javascript" src="bootstrap.min.js">
+        </script>
+        <script type="text/javascript" src="js.cookie.js">
+        </script>
+        <script type="text/javascript" src="videochat.js">
+        </script>
+    </head>
+    <body>
+        <div class="overlay" id="content-overlay">
+        </div>
+        <div id="content-loading-spinner-wrapper">
+            <div id="content-loading-spinner">
+                <div class="spinner">
+                </div>
+                <div class="loading-text">
+                    Loading . . .
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            &nbsp;
+        </div>
+        <div class="container hidden" id="call-sign-container">
+            <form>
+                <div class="row">
+                    <div class="col-sm-4">
+                        &nbsp;
+                    </div>
+                    <div class="col-sm-4">
+                        <label for="call-sign">
+                            Your Call Sign
+                        </label><br/>
+                        <input class="u-full-width" type="text" placeholder="" id="call-sign"/>
+                    </div>
+                    <div class="col-sm-4">
+                        &nbsp;
+                    </div>
+                </div>
+                <div class="row" id="login-row">
+                    <div class="col-sm-4">
+                        &nbsp;
+                    </div>
+                    <div class="col-sm-4">
+                        <input id="submit-call-sign" class="btn btn-primary" type="submit" value="Login"/>
+                    </div>
+                    <div class="col-sm-4">
+                        &nbsp;
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="container hidden" id="video-chat-container">
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="panel">
+                        <div class="panel-header">
+                            Video Chat
+                            <span class="pull-right" id="remote-call-sign"></span>
+                        </div>
+                        <div class="panel-body">
+                            <div class="embed-responsive embed-responsive-4by3 static-fixed" id="caller-container">
+                                <video class="embed-responsive-item" id="caller">
+                                </video>
+                                <div id="self-container">
+                                    <video id="self">
+                                    </video>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="panel">
+                        <div class="panel-header">
+                            Controls / Status
+                        </div>
+                        <div class="panel-body">
+                            <button class="btn btn-primary" id="hangup">
+                                Hangup
+                            </button>
+                            <button class="btn btn-primary pull-right" id="logout">
+                                Logout
+                            </button>
+                            <div id="ohsnap">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="panel-header">
+                            Available Users
+                        </div>
+                        <div class="panel-body">
+                            <ul class="list-group" id="users-list">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div id="copyright" class="center">
+                        Video Chat Copyright &copy;
+                        <a href="http://www.trevorsbench.com">
+                            Trevor Paskett - K7FPV
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </body>
+</html>

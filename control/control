@@ -1,0 +1,10 @@
+Package: videochat
+Version: 0.1b1
+Depends: node
+Provides: 
+Source: package/videochat
+Section: net
+Priority: optional
+Maintainer: Trevor Paskett (K7FPV)
+Architecture: all
+Description: Video chat for mesh networks

@@ -1,0 +1,22 @@
+#!/bin/bash
+
+rm -rf data.tar.gz control.tar.gz *.deb
+find . -name '*~' -delete
+
+export COPYFILE_DISABLE=1
+
+### Build pi package
+rm -rf data.tar.gz control.tar.gz
+
+mkdir -p tmp
+
+cd src
+cp -R * ../tmp/
+cd ../tmp
+tar -c --exclude '.DS_Store' -z -f ../data.tar.gz .
+
+cd ../control
+tar -c --exclude '.DS_Store' -z -f ../control.tar.gz .
+cd ..
+COPYFILE_DISABLE=1 ar r videochat_0.1b1_all.deb debian-binary control.tar.gz data.tar.gz
+rm -rf tmp

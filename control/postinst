@@ -1,0 +1,7 @@
+#!/bin/sh
+
+update-rc.d videochat defaults 99 > /dev/null 2>&1
+
+/etc/init.d/videochat start > /dev/null 2>&1
+
+exit 0
